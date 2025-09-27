@@ -301,7 +301,138 @@
             transform: scale(1.1);
         }
         
-        /* Light Theme */
+        /* Team of the Week */
+        .team-week {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .team-week h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .team-formation {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-formation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(74, 144, 226, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+            z-index: -1;
+        }
+        
+        .formation-field {
+            background: linear-gradient(to bottom, #2d8f3f 0%, #4caf50 50%, #2d8f3f 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .field-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+        
+        .center-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+        
+        .center-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .no-team-message {
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            z-index: 10;
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .coming-soon {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+        
+        .trophy-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        /* Light theme adjustments for team week */
+        .light-theme .team-week {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .light-theme .team-week h2 {
+            color: #1e3c72;
+            text-shadow: 0 0 20px rgba(30, 60, 114, 0.3);
+        }
+        
+        .light-theme .team-formation {
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid rgba(30, 60, 114, 0.2);
+        }
+        
+        .light-theme .no-team-message {
+            color: #1e3c72;
+            background: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 20px rgba(30, 60, 114, 0.3);
+            border: 2px solid rgba(30, 60, 114, 0.2);
+        }
+        
+        .light-theme .formation-field {
+            border: 3px solid rgba(30, 60, 114, 0.3);
+        }
         .light-theme {
             background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 50%, #ddeeff 100%);
             color: #333;
@@ -408,6 +539,32 @@
         .light-theme .footer-links a:hover {
             color: #4a90e2;
         }
+        
+        /* Light theme adjustments for team week */
+        .light-theme .team-week {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .light-theme .team-week h2 {
+            color: #1e3c72;
+            text-shadow: 0 0 20px rgba(30, 60, 114, 0.3);
+        }
+        
+        .light-theme .team-formation {
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid rgba(30, 60, 114, 0.2);
+        }
+        
+        .light-theme .no-team-message {
+            color: #1e3c72;
+            background: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 20px rgba(30, 60, 114, 0.3);
+            border: 2px solid rgba(30, 60, 114, 0.2);
+        }
+        
+        .light-theme .formation-field {
+            border: 3px solid rgba(30, 60, 114, 0.3);
+        }
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -467,6 +624,7 @@
                     <li><a href="#home">Início</a></li>
                     <li><a href="#about">Quem Somos</a></li>
                     <li><a href="#liga">Liga</a></li>
+                    <li><a href="#team-week">Equipa da Semana</a></li>
                     <li><a href="#discord">Discord</a></li>
                 </ul>
                 <button class="theme-toggle" onclick="toggleTheme()">🌙 Modo Escuro</button>
@@ -522,6 +680,44 @@
         </div>
     </section>
 
+    <section id="team-week" class="team-week">
+        <div class="container">
+            <h2>🏆 Equipa do Mês</h2>
+            <div class="team-formation fade-in">
+                <div class="formation-field">
+                    <div class="field-lines">
+                        <div class="center-line"></div>
+                        <div class="center-circle"></div>
+                    </div>
+                    <div class="no-team-message">
+                        <span class="trophy-icon">⚽</span>
+                        <div>Ainda Sem 11 do Mês</div>
+                        <div class="coming-soon">A primeira equipa do Mês será revelada em breve!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team-week" class="team-week">
+        <div class="container">
+            <h2>🏆 Equipa da Semana</h2>
+            <div class="team-formation fade-in">
+                <div class="formation-field">
+                    <div class="field-lines">
+                        <div class="center-line"></div>
+                        <div class="center-circle"></div>
+                    </div>
+                    <div class="no-team-message">
+                        <span class="trophy-icon">⚽</span>
+                        <div>Ainda Sem 11 da Semana</div>
+                        <div class="coming-soon">A primeira equipa da semana será revelada em breve!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="future" class="future">
         <div class="container">
             <h2>O Futuro da RCN</h2>
@@ -551,6 +747,7 @@
         <div class="container">
             <div class="footer-links">
                 <a href="#liga" onclick="alert('URL da Liga será adicionada em breve!')">🏆 Liga</a>
+                <a href="#team-week">⚽ Equipa da Semana</a>
                 <a href="https://discord.gg/JXjfa76k" target="_blank">💬 Discord</a>
                 <a href="#about">ℹ️ Sobre Nós</a>
             </div>
